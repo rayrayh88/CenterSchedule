@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TV</title>
+	<style>
+		html, body {
+			background: black;
+			padding: 0;
+			margin: 0;
+			width: 100%;  
+			height: 100%;
+		}
+	</style>
+	<script>
+		// update with the desired time to refresh the presentation (in minutes)
+		var refreshMinutes = 30;
+		
+		var timer=setInterval(function(){refreshFrame()}, refreshMinutes*60*1000);
+		function refreshFrame()
+		{
+			var iframe = document.getElementById('presentFrame');
+			var iframeURL = iframe.src;
+			iframe.src = iframeURL;
+		}
+	</script>
+</head>
+<body>
+<!-- update the presentation ID with your own presentation -->
+<!-- update the &delayms= with the time to show each slide (in milliseconds) -->
+<iframe id="presentFrame" src="https://docs.google.com/presentation/d/e/2PACX-1vRK4MeVRwizHekWK4pumTWM8ya1JOwHXxvWDnn5_rwPZicPCGGFtxVIsQRg8SqGa7a1z2OU4YDrnjQO/embed?start=true&loop=true&delayms=4000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</body>
+</html>
